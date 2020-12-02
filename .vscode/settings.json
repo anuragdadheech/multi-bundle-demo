@@ -1,7 +1,5 @@
 {
     "folders": [],
     "settings": {},
-    "[javascript]": {
-      "editor.formatOnSave": true
-    }
+    "editor.formatOnSave": true
 }

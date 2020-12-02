@@ -6,13 +6,6 @@
  */
 
 module.exports = {
-    serializer: {
-        createModuleIdFactory: function () {
-            return function (path) {
-                return modulePathHashFunction(path)
-            }
-        },
-    },
     transformer: {
         getTransformOptions: async () => ({
             transform: {
