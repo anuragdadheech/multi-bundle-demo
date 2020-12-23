@@ -73,7 +73,7 @@ function removeBaseCode(outputPath, base = BASE_BUNDLE) {
         })
         //commandLine '../../node_modules/hermes-engine/osx-bin/hermes', 'src/main/assets/async.js', '-emit-binary', '-out', 'src/main/assets/async.bundle'
         const bytecodeBundlePath = newPath.replace('-base.bundle', '.bundle')
-        exec(`node_modules/hermes-engine/osx-bin/hermes ${newPath} -emit-binary -out ${bytecodeBundlePath}`, () => {
+        exec(`node_modules/hermes-engine/osx-bin/hermesc ${newPath} -emit-binary -out ${bytecodeBundlePath}`, () => {
             resolve()
         })
     })
@@ -91,7 +91,7 @@ function generateByteCode() {
     return new Promise((resolve, reject) => {
         const out = BASE_BUNDLE.replace('-base.bundle', '.bundle')
         console.log('out', out)
-        exec(`node_modules/hermes-engine/osx-bin/hermes ${BASE_BUNDLE} -emit-binary -out ${out}`, {
+        exec(`node_modules/hermes-engine/osx-bin/hermesc ${BASE_BUNDLE} -emit-binary -out ${out} -O -w`, {
             cwd: __dirname,
             maxBuffer: 10 * 1024 * 1024
         }, (err, stdout, stderr) => {
