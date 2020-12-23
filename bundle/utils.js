@@ -1,4 +1,5 @@
 import { NativeModules } from 'react-native'
+import { getHash } from './getHash'
 
 const importLazy = async (path) => {
     const moduleId = getHash(path)
