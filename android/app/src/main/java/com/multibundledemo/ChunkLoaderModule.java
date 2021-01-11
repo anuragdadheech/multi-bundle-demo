@@ -69,7 +69,7 @@ public class ChunkLoaderModule extends ReactContextBaseJavaModule {
         CatalystInstance catalystInstance = reactApplicationContext.getCatalystInstance();
         String assetURL = "chunk-" + moduleId + ".bundle";
         String fileUrl = copyAsyncJsToFs(reactApplicationContext, assetURL);
-        catalystInstance.loadScriptFromFile(fileUrl, null, false);
+        catalystInstance.loadScriptFromFile(fileUrl, null, true);
         promise.resolve(true);
     }
 }

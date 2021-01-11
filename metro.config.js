@@ -5,7 +5,7 @@
  * @format
  */
 
-const getHash = require('./bundle/getHash').getHash
+const getHash = require('./getHash').getHash
 
 module.exports = {
 	serializer: {
